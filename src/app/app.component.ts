@@ -8,13 +8,13 @@ import { StructuralDirectiveNgforVsForComponent } from './structural-directive-n
 import { StructuralDirectiveNgswitchVsSwitchComponent } from './structural-directive-ngswitch-vs-switch/structural-directive-ngswitch-vs-switch.component';
 import { AttributeDirectivesComponentComponent } from './attribute-directives-component/attribute-directives-component.component';
 import { SignalsComponent } from './signals/signals.component';
+import { LinkedSignalsComponent } from "./linked-signals/linked-signals.component";
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, 
-            SignalsComponent,
-            ],
+  imports: [RouterOutlet,
+            LinkedSignalsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
