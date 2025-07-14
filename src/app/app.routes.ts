@@ -4,6 +4,7 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { StructuralDirectiveNgifVsIfComponent } from './structural-directive-ngif-vs-if/structural-directive-ngif-vs-if.component';
 import { AttributeDirectivesComponentComponent } from './attribute-directives-component/attribute-directives-component.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { BuiltInPipesComponent } from './built-in-pipes/built-in-pipes.component';
 
 export const routes: Routes = [
       // {path: '', component: UserComponent},
@@ -12,5 +13,6 @@ export const routes: Routes = [
       {path : 'data-binding', component: DataBindingComponent },
       {path : 'structural-directive', component: StructuralDirectiveNgifVsIfComponent },
       {path : 'attribute-directive', component: AttributeDirectivesComponentComponent },
+      {path : 'built-in-pipes', component: BuiltInPipesComponent},
       {path : '**', component: PageNotFoundComponent}
 ];
