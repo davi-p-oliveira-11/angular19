@@ -3,10 +3,17 @@ import { RouterOutlet } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { AppDirectivesComponent } from './app-directives/app-directives.component';
+import { StructuralDirectiveNgifVsIfComponent } from './structural-directive-ngif-vs-if/structural-directive-ngif-vs-if.component';
+import { StructuralDirectiveNgforVsForComponent } from './structural-directive-ngfor-vs-for/structural-directive-ngfor-vs-for.component';
+import { StructuralDirectiveNgswitchVsSwitchComponent } from './structural-directive-ngswitch-vs-switch/structural-directive-ngswitch-vs-switch.component';
+import { AttributeDirectivesComponentComponent } from './attribute-directives-component/attribute-directives-component.component';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, AppDirectivesComponent],
+  imports: [RouterOutlet, 
+            AttributeDirectivesComponentComponent ,
+            ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
