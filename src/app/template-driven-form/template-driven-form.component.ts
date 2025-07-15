@@ -8,5 +8,6 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './template-driven-form.component.scss'
 })
 export class TemplateDrivenFormComponent {
-
+ firstName : string = '';
+ lastName : string = '';
 }
