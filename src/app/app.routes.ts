@@ -5,6 +5,7 @@ import { StructuralDirectiveNgifVsIfComponent } from './structural-directive-ngi
 import { AttributeDirectivesComponentComponent } from './attribute-directives-component/attribute-directives-component.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BuiltInPipesComponent } from './built-in-pipes/built-in-pipes.component';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 export const routes: Routes = [
       // {path: '', component: UserComponent},
@@ -14,5 +15,6 @@ export const routes: Routes = [
       {path : 'structural-directive', component: StructuralDirectiveNgifVsIfComponent },
       {path : 'attribute-directive', component: AttributeDirectivesComponentComponent },
       {path : 'built-in-pipes', component: BuiltInPipesComponent},
+      {path : 'tdf', component: TemplateDrivenFormComponent},
       {path : '**', component: PageNotFoundComponent}
 ];
