@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { User } from '../user';
-import { JsonPipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-template-driven-form',
-  imports: [FormsModule, JsonPipe],
+  imports: [FormsModule],
   templateUrl: './template-driven-form.component.html',
   styleUrl: './template-driven-form.component.scss'
 })

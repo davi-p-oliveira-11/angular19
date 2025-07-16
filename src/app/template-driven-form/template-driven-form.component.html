@@ -1,11 +1,11 @@
 <div class="container">
   <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
-
+       <pre>Valid : {{userForm.valid }}</pre>
        <!--
         <pre>Value : {{userForm.value | json }}</pre>
-        <pre>Valid : {{userForm.value.valid }}</pre>
+        <pre>Valid : {{userForm.valid }}</pre>
         <pre>Invalid : {{userForm.invalid}}</pre>
-        <pre>Touched : {{userForm.value.touched}}</pre>
+        <pre>Touched : {{userForm.touched}}</pre>
         <pre>Untouched : {{userForm.valid}}</pre>
         <pre>Submitted : {{userForm.submitted}}</pre>
        -->
@@ -14,16 +14,46 @@
        {{userObject.firstName}}
        <div class="form-group m-2">
         <label>First Name</label>
-        <input type="text" class="form-control" placeholder="Enter first name" name="firstName" [(ngModel)]="userObject.firstName" required>
+        <input type="text" class="form-control" placeholder="Enter first name" #fname="ngModel" name="firstName" [(ngModel)]="userObject.firstName" minlength="5" required>
+        @if((fname?.dirty || fname?.touched)) {
+          @if(fname?.errors?.['required']) {
+            <small class="text-danger">Firstname is required.</small>
+          }
+          @if(fname?.errors?.['minlength']) {
+            <small class="text-danger">The minimum length of the firstname should be 5</small>
+          }
+        }
+        
        </div>
-       {{userObject.lastName}}
+        <!--<pre>Value : {{fname.value}}</pre>
+            <pre>Valid : {{fname.valid }}</pre>
+            <pre>Invalid : {{fname.invalid}}</pre>
+            <pre>Touched : {{fname.touched}}</pre> -->
        <div class="form-group m-2">
         <label>Last Name</label>
-        <input type="text" class="form-control" placeholder="Enter last name" name="lastName" [(ngModel)]="userObject.lastName">
+        <input type="text" class="form-control" placeholder="Enter last name" #lname="ngModel" name="lastName" 
+        [(ngModel)]="userObject.lastName" pattern="^[a-zA-Z]+$" maxlength="15" required>
+        @if((lname?.dirty || lname?.touched)) {
+          @if(lname?.errors?.['required']) {
+            <small class="text-danger">Last name is required.</small>
+          }
+          @if(lname?.errors?.['pattern']) {
+            <small class="text-danger">TLastname does not match the required pattern.</small>
+          }
+        }
        </div>
        <div class="form-group m-2">
         <label>Email</label>
-        <input type="email" class="form-control" placeholder="Enter email address" name="email" [(ngModel)]="userObject.email">
+        <input type="email" class="form-control" placeholder="Enter email address" #emailid="ngModel" name="email" 
+          [(ngModel)]="userObject.email" email required>
+          @if((emailid?.dirty || emailid?.touched)) {
+            @if(emailid?.errors?.['required']) {
+              <small class="text-danger">Email address is required.</small>
+            }
+           @if(emailid?.errors?.['email']) {
+             <small class="text-danger">Please enter a valid email address </small>
+           }
+         }
        </div>
        <div class="form-group m-2">
         <label>Password</label>
@@ -33,10 +63,12 @@
         <input type="checkbox" class="form-check-input" name="isCheck" [(ngModel)]="userObject.isCheck">
         <label>Check me out </label>
        </div>
-       <button class="btn btn-success m-2">Submit</button>
-       <button class="btn btn-warning m-2" (click)="setValues(userForm)">Set Values</button>
+       <button class="btn btn-success m-2 " [disabled]="!userForm.valid">Submit</button>
+       <!-- <button class="btn btn-success m-2 " [disabled]="userForm.invalid">Submit</button> --> 
+
+       <!-- <button class="btn btn-warning m-2" (click)="setValues(userForm)">Set Values</button> -->
        <button class="btn btn-primary m-2" (click)="patchValues(userForm)">Patch Values</button>
-       <button class="btn btn-secondary m-2" (click)="resetValues(userForm)">Reset</button>
+       <!-- <button class="btn btn-secondary m-2" (click)="resetValues(userForm)">Reset</button> -->
   </form>
 </div>
 
