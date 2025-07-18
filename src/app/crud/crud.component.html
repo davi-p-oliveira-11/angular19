@@ -1,1 +1,23 @@
-<p>crud works!</p>
+<div class="container">
+   <h2 class="text-center m-4">
+      Angular 19 : CRUD Operations with JSON Server
+   </h2>
+   <table class="table table-success table-striped">
+       <thead>
+           <tr>
+             <th>Id</th>
+             <th>Name</th>
+             <th>Username</th>
+             <th>Email</th>
+           </tr> 
+       </thead>
+       <tbody>
+          <tr *ngFor="let data of apiData">
+             <td>{{data.id}}</td>
+             <td>{{data.name}}</td>
+             <td>{{data.username}}</td>
+             <td>{{data.email}}</td>
+          </tr>
+       </tbody>
+   </table>
+</div>
