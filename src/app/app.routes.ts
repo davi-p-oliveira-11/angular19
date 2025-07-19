@@ -9,6 +9,9 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CrudComponent } from './crud/crud.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
+import { ViewUserComponent } from './view-user/view-user.component';
 
 export const routes: Routes = [
       // {path: '', component: UserComponent},
@@ -22,5 +25,8 @@ export const routes: Routes = [
       {path : 'tdf', component: TemplateDrivenFormComponent},
       {path : 'rf', component: ReactiveFormComponent},
       {path : 'crud', component: CrudComponent},
+      {path : 'adduser', component: AddUserComponent},
+      {path : 'updateuser/:id', component: UpdateUserComponent},
+      {path : 'viewuser', component: ViewUserComponent},
       {path : '**', component: PageNotFoundComponent}
 ];
